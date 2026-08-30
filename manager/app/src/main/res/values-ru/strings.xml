@@ -536,6 +536,4 @@
     <string name="susfs_enable_config">менеджер SUSFS</string>
     <string name="susfs_enable_config_summary">Включите встроенный менеджер SUSFS. Может конфликтовать со сторонними модулями.</string>
     <string name="susfs_config_disable_warning">Встроенный менеджер SUSFS отключен. Включите его или установите сторонний модуль для использования функций SUSFS.</string>
-    <string name="settings_webview_zygote_umount">Размонтирование для WebView</string>
-    <string name="settings_webview_zygote_umount_summary">Предотвращает утечку информации из процесса WebView, но может нарушить работу модулей. Перезагрузите для применения</string>
 </resources>
