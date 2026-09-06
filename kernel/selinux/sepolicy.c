@@ -1155,13 +1155,13 @@ int ksu_dup_policydb(struct policydb *old_db, struct policydb *new_db)
     // Some device policy db seems not marking type itself in type_attr_map_array
     // policydb_read() adds each type to its own attribute map, so old_db->policydb.len may be smaller
     // preserve one ebitmap entry for this condition to avoid trigger -EINVAL
-    len = old_db->policydb.len + (size_t)old_db->policydb.p_types.nprim * (sizeof(u32) + sizeof(u64));
+    len = old_db->len + (size_t)old_db->p_types.nprim * (sizeof(u32) + sizeof(u64));
 
     ksu_unlock_sepolicy_legacy();
 
     data = vmalloc(len);
     if (!data) {
-        pr_err("alloc policy buffer len %zu\n", len);
+        pr_err("alloc policy buffer len %d\n", len);
         ret = -ENOMEM;
         goto out_free_data;
     }
